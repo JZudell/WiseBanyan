@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.expanse.computeraccount.wisebanyanapp.pojo.StockTickerObject;
 import com.expanse.computeraccount.wisebanyanapp.pojo.TickerDateInfoObject;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class HistoryRecyclerAdapter extends RecyclerView.Adapter<HistoryRecyclerAdapter.ViewHolder> {
@@ -55,7 +56,11 @@ public class HistoryRecyclerAdapter extends RecyclerView.Adapter<HistoryRecycler
 
         double changeNumber = Double.parseDouble(change);
 
-        String closeString = "$"+close;
+        double closeNumber = Double.parseDouble(close);
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+
+        String closeString = formatter.format(closeNumber);
         holder.closeTextView.setText(closeString);
         holder.closeTextView.setTypeface(null, Typeface.BOLD);
         holder.closeTextView.setTextSize(20);
