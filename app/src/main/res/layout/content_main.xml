@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="MainActivity"
+    tools:showIn="@layout/activity_main">
+    <RelativeLayout
+        android:background="@color/banyanWhite"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/logo">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/logo_wisebanyan"
+            android:layout_alignParentLeft="true" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_below="@+id/logo"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_symbol_text"/>
+    <com.jjoe64.graphview.GraphView
+
+
+        android:layout_marginEnd="20dp"
+        android:layout_below="@id/main_symbol_text"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/graph"
+        android:layout_marginRight="20dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/graph"
+        android:id="@+id/recycler_view"
+        android:background="@android:color/background_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
